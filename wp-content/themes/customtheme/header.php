@@ -17,5 +17,15 @@
 
 
 </head>
+<!-- *** Add dynamic classes of wordpress
+    body_class() = It simply adds the wordpress classes when we go to any page
+                   like about,it will add about page class.
 
-<body>
+    body_class(['my-class']) = Add your custom static class on every page body
+-->
+<?php
+    $dynamic_class = [$wp_query->query['pagename']];
+?>
+<body <?= body_class($dynamic_class); ?> >
+
+
