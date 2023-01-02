@@ -33,7 +33,10 @@ function custom_theme_support_setup(){
 add_action('init','custom_theme_support_setup');
 
 
-// Enable background feature for themes
+// Enable feature for themes
 add_theme_support('custom-header');
 add_theme_support('custom-background');
 add_theme_support('post-thumbnails');
+
+// Enable post formats - activate the post formats
+add_theme_support('post-formats',['aside','image','video']);

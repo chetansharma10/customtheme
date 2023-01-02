@@ -5,12 +5,18 @@
         while (have_posts()) : the_post(); ?>
           
             <!-- Add Custom Post Feature Image -->
-            <div><?= the_post_thumbnail('thumbnail') ?></div>
+            <div class='post-image'><?= the_post_thumbnail('thumbnail') ?></div>
             
-            <h3><?= the_title(); ?></h3>
-            <small>Posted on <?= the_time('F j,Y')?> at <?= the_time('g:i a')?>  <?= the_category(); ?></small>
-            <p><?= the_content();?></p>
-            <hr>
+            <!-- Post Format -->
+            <h3><?= get_post_format(); ?></h3>
+
+            <!-- Get Template Part helps to read a custom conten.php -->
+            <h3><?= get_template_part('content'); ?></h3>
+
+            <!-- It will look content-aside.php -->
+            <h3><?= get_template_part('content',get_post_format()); ?></h3>
+
+     
     <?php
         endwhile;
     }
