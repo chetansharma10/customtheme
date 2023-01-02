@@ -28,4 +28,9 @@
 ?>
 <body <?= body_class($dynamic_class); ?> >
 
+<!-- Custom Header image Location -->
+<img src="<?=header_image()?>"
+     width="<?=get_custom_header()->width?>"
+     height="<?=get_custom_header()->height?>">
+
 

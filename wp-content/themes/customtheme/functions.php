@@ -31,3 +31,9 @@ function custom_theme_support_setup(){
 
 }
 add_action('init','custom_theme_support_setup');
+
+
+// Enable background feature for themes
+add_theme_support('custom-header');
+add_theme_support('custom-background');
+add_theme_support('post-thumbnails');
