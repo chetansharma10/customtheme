@@ -7,30 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Theme</title>
 
-    <!-- Injecting styles,and scripts of custom theme -->
+    <!-- Injecting wordpress scripts,styles etc  -->
     <?= wp_head(); ?>
 
-    <header>
-        <!-- Injecting Primary Nav Menu - Header -->
-        <?= wp_nav_menu(["theme_location" => "primary"]) ?>
-    </header>
-
-
 </head>
-<!-- *** Add dynamic classes of wordpress
-    body_class() = It simply adds the wordpress classes when we go to any page
-                   like about,it will add about page class.
 
-    body_class(['my-class']) = Add your custom static class on every page body
+<!-- 
+  
+    Add dynamic classes of wordpress
+    body_class() = It simply adds the wordpress by default classes, means when you
+                   visit on any page then it will simply add classes according to the
+                   page etc.
+    body_class(['my-class']) = Add your custom static class on
+                               every page body
+    
+    body_class([$wp_query->query['pagename']])= Helps to add
+                                class according to the page name
+    
 -->
-<?php
-    $dynamic_class = [$wp_query->query['pagename']];
-?>
-<body <?= body_class($dynamic_class); ?> >
 
-<!-- Custom Header image Location -->
-<img src="<?=header_image()?>"
-     width="<?=get_custom_header()->width?>"
-     height="<?=get_custom_header()->height?>">
+<body <?php
+        $pageName = $wp_query->query['pagename'];
+        body_class([$pageName ? $pageName : '/']) ?>>
+    <?php get_template_part('template-parts/header/site-navbar'); ?>
 
-
+    <!-- Custom Header image Location -->
+    <img  src="<?=header_image()?>"
+        width="<?=get_custom_header()->width?>"
+        height="<?=get_custom_header()->height?>">
