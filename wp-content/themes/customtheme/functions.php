@@ -63,3 +63,5 @@ add_action('wp_footer', 'add_scripts_in_footer');
 // Using Menu Functions such as filters etc
 require get_template_directory() . '/inc/menu-functions.php';
 
+// Using Side bar Functions
+require get_template_directory() . '/inc/sidebar-functions.php';
