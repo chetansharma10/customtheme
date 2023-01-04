@@ -23,7 +23,9 @@ function inject_menu_scripts()
 
     // This feature helps to add thumbnails in post
     add_theme_support('post-thumbnails');
-
+    add_theme_support( 'custom-logo',[
+        "width"=>"100px"
+    ] );
     // Enable post formats - activate the post formats
     add_theme_support('post-formats',['aside','image','video','standard']);
 }
