@@ -27,8 +27,8 @@
 -->
 
 <body <?php
-        $pageName = $wp_query->query['pagename'];
-        body_class([$pageName ? $pageName : '/']) ?>>
+        $pageName = $wp_query->query['pagename']??'';
+        body_class([$pageName]) ?>>
     <?php get_template_part('template-parts/header/site-navbar'); ?>
 
     <!-- Custom Header image Location -->

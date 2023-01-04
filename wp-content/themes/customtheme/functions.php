@@ -18,11 +18,14 @@ function inject_menu_scripts()
     // Make visible Header inside Themes corner that helps to add header images
     add_theme_support('custom-header');
 
-    // This feature helps to add custom background 
-    // add_theme_support('custom-background');
+    // Make visible Background inside Themes corner that helps to add backgrounds
+    add_theme_support('custom-background');
 
     // This feature helps to add thumbnails in post
-    // add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails');
+
+    // Enable post formats - activate the post formats
+    add_theme_support('post-formats',['aside','image','video','standard']);
 }
 // On Init call the above function
 add_action('init', 'inject_menu_scripts');
@@ -59,3 +62,4 @@ add_action('wp_footer', 'add_scripts_in_footer');
 
 // Using Menu Functions such as filters etc
 require get_template_directory() . '/inc/menu-functions.php';
+
