@@ -21,7 +21,7 @@
             ?>
         </div>
         <div class="col-md-4">
-            <?= get_sidebar();?>
+            <?= get_sidebar(); ?>
         </div>
     </div>
 
