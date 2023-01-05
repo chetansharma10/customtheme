@@ -23,11 +23,19 @@ function inject_menu_scripts()
 
     // This feature helps to add thumbnails in post
     add_theme_support('post-thumbnails');
+
+    // Add Custom Logo feature
     add_theme_support( 'custom-logo',[
         "width"=>"100px"
     ] );
+
+    // Add Search theme support
+    add_theme_support('html5',['search-form']);
+
     // Enable post formats - activate the post formats
     add_theme_support('post-formats',['aside','image','video','standard']);
+
+    
 }
 // On Init call the above function
 add_action('init', 'inject_menu_scripts');

@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
+            <h1>Each Post View</h1>
             <?php
-                // Add Custom Search Form
-                get_search_form();
+                
 
                 if (have_posts()) {
                     while (have_posts()) : the_post(); ?>
