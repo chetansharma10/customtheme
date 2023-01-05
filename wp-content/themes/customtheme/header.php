@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html <?= language_attributes();?>>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?=bloginfo('charset');?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Theme</title>
+    <title><?= bloginfo('title'); ?><?= wp_title('>');?></title>
 
     <!-- Injecting wordpress scripts,styles etc  -->
     <?= wp_head(); ?>
