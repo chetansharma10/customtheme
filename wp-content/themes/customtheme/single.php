@@ -7,7 +7,6 @@
             <h1>Each Post View</h1>
             <?php
                 
-
                 if (have_posts()) {
                     while (have_posts()) : the_post(); ?>
                         <!-- Reading the posts -->
